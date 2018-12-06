@@ -13,7 +13,7 @@ public class Utils
 
 	public String skip(String first, String second) {
 	
-		String isSkip = "·ñ";
+		String isSkip = "å¦";
 		if (StringUtils.isEmpty(first) || StringUtils.isEmpty(second)){
 			return isSkip;
 		}
@@ -24,9 +24,9 @@ public class Utils
 		a.put("C",4);
 		a.put("D",5);
 		int skip = Math.abs(a.get(first) - a.get(second));
-		// ´óÓÚ1£¬ Ìø±ä
+		// å¤§äºŽ1ï¼Œ è·³å˜
 		if (skip > 1){
-			isSkip = "ÊÇ";
+			isSkip = "æ˜¯";
 		}
 		return isSkip;
 	}
