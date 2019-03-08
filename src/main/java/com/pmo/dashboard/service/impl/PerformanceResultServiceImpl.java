@@ -33,4 +33,10 @@ public class PerformanceResultServiceImpl implements PerformanceResultService{
 		return performanceResultMapper.insert(pv);
 	}
 
+	@Override
+	public int update(PresultVo pv) {
+		return performanceResultMapper.update(pv);
+	}
+	
+
 }

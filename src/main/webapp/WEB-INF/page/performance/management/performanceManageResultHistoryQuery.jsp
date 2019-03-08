@@ -76,7 +76,7 @@ var path='<%=path%>';
 			<div class="box-inner">
 				<div class="box-header well" data-original-title="">
 					<h2>
-						<i class="glyphicon glyphicon-user"></i>  Management-绩效结果-历史绩效
+						<i class="glyphicon glyphicon-user"></i>  Management-Assessment Result-Latest Performance
 					</h2>
 				</div>
 				<div id="employeeInfo" class="box-content">
@@ -108,7 +108,17 @@ var path='<%=path%>';
 						<div class="group">
 							<label class="col-sm-2 control-label">DU</label>
 							<div class="col-sm-4">
-								<input readonly="readonly" type="text" class="form-control" id="du" name="du" value="${DU }" />
+								
+								<c:if test="${userType != '1'}">
+									<input readonly="readonly" type="text" class="form-control" id="du" name="du" value="${DU }" />
+								</c:if>
+								
+								<c:if test="${userType == '1'}">
+									 <select class="form-control" name="csSubDept" data-bv-notempty
+												data-bv-notempty-message="请选择角色" id="csSubDept" data-bv-group=".group">
+												<option value="">-- Option--</option>
+									 </select>
+								</c:if>
 							</div>
 						</div>
 						</br></br></br>

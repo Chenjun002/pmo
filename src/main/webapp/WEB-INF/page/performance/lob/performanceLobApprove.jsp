@@ -62,7 +62,7 @@ var path='<%=path%>';
 						<div class="box-inner" >
 							<div class="box-header well" data-original-title="" >
 								<h2>
-									<i class="glyphicon glyphicon-briefcase"></i>  LOB-审批
+									<i class="glyphicon glyphicon-briefcase"></i>  LOB-Approval
 								</h2>
 							</div>
 
@@ -74,7 +74,7 @@ var path='<%=path%>';
 
 									<table id="table1" border="1" width="100%" borderColor="green" >
 										<tr style="">
-										 <td colspan="7" style="text-align:center"><font color="green"> 事业部绩效审核(参考比例要求控制)</font>	 </td>
+										 <td colspan="7" style="text-align:center"><font color="green"> LOB Proportions</font>	 </td>
 										</tr>
 									   <tr>
 										 <td> A <br/>(10-15%)</td>
@@ -82,7 +82,7 @@ var path='<%=path%>';
 										 <td> B <br/> &nbsp;</td>
 										 <td> C <br/>(5-10%)</td>
 										 <td> D <br/>(0-5%) </td>
-										 <td> 参评比例合计 </td>
+										 <td> Total </td>
 									   </tr>
 									   <tr>			
 										 <td>  <div id="empA"></div>	 </td>
@@ -106,7 +106,7 @@ var path='<%=path%>';
 									
 									<table id="table3" border="1" width="100%" >
 										<tr style="background-color:#00688B">
-										 <td ><font color="white"> 当期绩效</font>	 </td>
+										 <td ><font color="white"> Latest Performance</font>	 </td>
 										</tr>
 									   <tr>
 										 <td> <table id="HRBPApprovalList" class="table table-thead-background"></table> </td>									

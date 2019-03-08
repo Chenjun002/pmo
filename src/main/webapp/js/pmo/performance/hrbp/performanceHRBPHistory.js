@@ -81,17 +81,24 @@ function loadManageResultHistoryQueryList() {
 		    },
 		    {
 			  field : 'name',
-			  title : 'Employee Name'
+			  title : 'Name',
+			  width:80
 		    }, 
 		    {
 			  field : 'bu',
 			  title : 'BU',
-			  width:150
+			  width:215,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		    }, 
 		    {
 			  field : 'du',
 			  title : 'DU',
-			  width:150
+			  width:175,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		    }, 
 		   {
 			  field : 'beginDate',
@@ -132,15 +139,21 @@ function loadManageResultHistoryQueryList() {
 		    }, 
 		    {
 			  field : 'result',
-			  title : 'Assessment Result'
+			  title : 'Result',
+			  width:80
 		    }, 
 		    {
 			  field : 'resultComments',
-			  title : 'Remark'
+			  title : 'Remark',
+			  width:165,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		} ],
 		onLoadSuccess : function(sta) {
 			console.log("in onLoadSuccess");
 			console.log(JSON.stringify(sta));
+			loadCSBu();
 		},
 		onLoadError : function(status, res) { // 加载失败时执行
 //			console.log(res);
@@ -156,7 +169,10 @@ function search() {
 	// 获取查询条件
 	var eHr = $("#eHr").val();
 	var staffName = $("#staffName").val();
-	var bu = $("#bu").val();
+	
+	var buOptions = $("#csBu option:selected");
+	var bu = buOptions.val();
+	
 	var du = $("#du").val();
 	var startYear = $("#startYear").val();
 	var startQuarter = $("#startQuarter").val();
@@ -175,12 +191,12 @@ function search() {
 		}
 	}
 	// 刷新表格
-	$('#manageResultHistoryQueryList').bootstrapTable('refreshOptions', {
-		pageSize : 10,
-		pageNumber : 1
-	});
-	// $('#manageResultHistoryQueryList').bootstrapTable('refresh',
-	// queryParams);
+//	$('#manageResultHistoryQueryList').bootstrapTable('refreshOptions', {
+//		pageSize : 10,
+//		pageNumber : 1
+//	});
+	 $('#manageResultHistoryQueryList').bootstrapTable('refresh',
+	 queryParams);
 }
 function detail(employeeId,quarter,year) {
 	window.location.href = path+"/service/performanceManageEva/historyPerforDetailPage/"+employeeId+"/"+quarter+"/"+year;
@@ -214,4 +230,18 @@ function clearParams() {
 	$("#startQuarter").val("Q1");
 	$("#endYear").val("2018");
 	$("#endQuarter").val("Q4");
+}
+/*
+ * add BU list
+ */
+function loadCSBu(){
+	var url = path+'/json/csBuName.json'
+	$.getJSON(url,  function(data) {
+		   $("#csBu").empty();
+		   $("#csBu").append("<option value=''>--Option--</option>");
+	       $.each(data, function(i, item) {
+	    	   $("#csBu").append("<option value=\""+item.name+"\">"+item.name+"</option>");
+	       })
+	       
+	});
 }

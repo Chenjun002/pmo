@@ -81,17 +81,24 @@ function loadManageResultHistoryQueryList() {
 		    },
 		    {
 			  field : 'name',
-			  title : 'Employee Name'
+			  title : 'Name',
+			  width:80
 		    }, 
 		    {
 			  field : 'bu',
 			  title : 'BU',
-			  width:150
+			  width:215,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		    }, 
 		    {
 			  field : 'du',
 			  title : 'DU',
-			  width:150
+			  width:175,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		    }, 
 		   {
 			  field : 'beginDate',
@@ -132,15 +139,21 @@ function loadManageResultHistoryQueryList() {
 		    }, 
 		    {
 			  field : 'result',
-			  title : 'Assessment Result'
+			  title : 'Result',
+			  width:80
 		    }, 
 		    {
 			  field : 'resultComments',
-			  title : 'Remark'
+			  title : 'Remark',
+			  width:165,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		} ],
 		onLoadSuccess : function(sta) {
 //			console.log("in onLoadSuccess");
 //			console.log(JSON.stringify(sta));
+			loadCSSubDept(sta);
 		},
 		onLoadError : function(status, res) { // 加载失败时执行
 //			console.log(res);
@@ -158,6 +171,10 @@ function search() {
 	var staffName = $("#staffName").val();
 	var bu = $("#bu").val();
 	var du = $("#du").val();
+	if(!du){
+		var duOptions = $("#csSubDept option:selected");
+		du = duOptions.val();
+	}
 	var startYear = $("#startYear").val();
 	var startQuarter = $("#startQuarter").val();
 	var endYear = $("#endYear").val();
@@ -175,12 +192,12 @@ function search() {
 		}
 	}
 	// 刷新表格
-	$('#manageResultHistoryQueryList').bootstrapTable('refreshOptions', {
-		pageSize : 10,
-		pageNumber : 1
-	});
-	// $('#manageResultHistoryQueryList').bootstrapTable('refresh',
-	// queryParams);
+//	$('#manageResultHistoryQueryList').bootstrapTable('refreshOptions', {
+//		pageSize : 10,
+//		pageNumber : 1
+//	});
+	 $('#manageResultHistoryQueryList').bootstrapTable('refresh',
+	 queryParams);
 }
 function detail(employeeId,year,quarter) {
 	window.location.href = path+"/service/performanceManageEva/historyPerforDetailPage/"+employeeId+"/"+quarter+"/"+year;
@@ -215,3 +232,47 @@ function clearParams() {
 	$("#endYear").val("2018");
 	$("#endQuarter").val("Q4");
 }
+
+
+/*
+ * add DU list
+ */
+var allCSSubDept;
+function loadCSSubDept(result){
+	var userType = result.user.userType;
+	var csSubDeptNames = result.csSubDeptNames;
+	$.ajax({
+		url:path+'/service/csDept/queryAllCSSubDeptName',
+		dataType:"json",
+		async:true,
+		cache:false,
+		type:"post",
+		success:function(list){
+			allCSSubDept= list;
+			$("#csSubDept").empty();
+			$("#csSubDept").append("<option value=''>--Option--</option>");
+			for(var i = 0;i<list.length;i++){
+				$("#csSubDept").append("<option>"+list[i].csSubDeptName+"</option>");
+			}
+			
+			if(userType=='3' || userType=='4' || userType=='5'){
+				if(csSubDeptNames.length==1){
+					$('#csSubDept').val(result.csSubDeptNames[0]);
+					$("#csSubDept").attr("disabled","disabled");
+				}else if(csSubDeptNames.length>1){
+					$("#csSubDept").empty();
+					for(var i = 0;i<csSubDeptNames.length;i++){
+						$("#csSubDept").append("<option>"+csSubDeptNames[i]+"</option>");
+						//$('#csSubDept').val(result.pageInfo.csSubDeptName);
+					}
+				}
+			}else{
+				//$('#csSubDept').val(result.pageInfo.csSubDeptName);
+				
+			}
+		}
+	})
+}
+
+
+

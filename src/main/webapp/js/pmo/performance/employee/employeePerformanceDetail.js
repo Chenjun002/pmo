@@ -48,7 +48,7 @@ function loadPriorityWork(result){
 			tr1.appendTo(tbody);
 		}
 	if(result.data[i].type == "0"){
-		var td1 = $("<td id='tx1'>重点工作</td>");
+		var td1 = $("<td id='tx1'>KBO</td>");
 		
 		var td2 = $("<td name='index'>"
 				+ result.data[i].index
@@ -78,14 +78,14 @@ function loadPriorityWork(result){
 		td7.appendTo(tr1);
 
 	}}
-	var tr2 = $("<tr id='tr2' ></tr>");
-	tr2.appendTo(tbody);
-//	var td = $("<td></td>");
-//	td.appendTo(tr2);
-	var td1 = $("<td colspan='8'></td>");
-	td1.appendTo(tr2);
-	var href =$("<button id='button1' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr1(\'table1\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
-	href.appendTo(td1);
+//	var tr2 = $("<tr id='tr2' ></tr>");
+//	tr2.appendTo(tbody);
+////	var td = $("<td></td>");
+////	td.appendTo(tr2);
+//	var td1 = $("<td colspan='8'></td>");
+//	td1.appendTo(tr2);
+//	var href =$("<button id='button1' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr1(\'table1\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Add"+"</button>"); 
+//	href.appendTo(td1);
 	
 	$("#table1").append("</tbdoy>");
 }
@@ -101,7 +101,7 @@ function loadKeyEvents(result){
 			tr1.appendTo(tbody);
 		}
 	if(result.data[i].type == "1"){
-		var td1 = $("<td style='width:153px;' id='tx1'>关键事件</td>");
+		var td1 = $("<td style='width:153px;' id='tx1'>Key Event</td>");
 		
 		var td2 = $("<td style='width:97px;' name='index'>"
 				+ result.data[i].index
@@ -131,14 +131,14 @@ function loadKeyEvents(result){
 		td7.appendTo(tr1);
 
 	}}
-	var tr2 = $("<tr id='tr2' ></tr>");
-	tr2.appendTo(tbody);
-//	var td = $("<td></td>");
-//	td.appendTo(tr2);
-	var td1 = $("<td colspan='7'></td>");
-	td1.appendTo(tr2);
-	var href =$("<button id='button2' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr3(\'table2\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
-	href.appendTo(td1);
+//	var tr2 = $("<tr id='tr2' ></tr>");
+//	tr2.appendTo(tbody);
+////	var td = $("<td></td>");
+////	td.appendTo(tr2);
+//	var td1 = $("<td colspan='7'></td>");
+//	td1.appendTo(tr2);
+//	var href =$("<button id='button2' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr3(\'table2\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Add"+"</button>"); 
+//	href.appendTo(td1);
 	
 	$("#table2").append("</tbdoy>");
 }
@@ -172,12 +172,13 @@ function loadEmployeePlan(result){
 		td4.appendTo(tr);
 
 	}
-	var tr2 = $("<tr id='tr2' ></tr>");
-	tr2.appendTo(tbody);
-	var td1 = $("<td colspan='4'></td>");
-	td1.appendTo(tr2);
-	var href =$("<button id='button3' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr2(\'table3\', -1, 4);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
-	href.appendTo(td1);
+//	var tr2 = $("<tr id='tr2' ></tr>");
+//	tr2.appendTo(tbody);
+//	var td1 = $("<td colspan='4'></td>");
+//	td1.appendTo(tr2);
+//	var href =$("<button id='button3' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr2(\'table3\', -1, 4);\")>"+"<span class='glyphicon glyphicon-plus'></span> Add"+"</button>"); 
+//	href.appendTo(td1);
 	$("#table3").append("</tbdoy>");	
 }
+
 

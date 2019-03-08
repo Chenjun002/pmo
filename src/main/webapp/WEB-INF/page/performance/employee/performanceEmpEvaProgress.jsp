@@ -65,7 +65,7 @@ var path='<%=path%>';
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-user"></i>  Employee-绩效考评-考评进度  
+									<i class="glyphicon glyphicon-user"></i>  Employee-Assessment Process
 								</h2>
 							</div>
 							<div id="employeeInfo" class="box-content">
@@ -76,10 +76,10 @@ var path='<%=path%>';
 									<table id="performancePregressList" class="table table-striped table-bordered" >
 										<thead>
 											<tr style="background-color:#d9edf7">
-												<th>流程名称</th>
-												<th>审核人</th>
-												<th>状态</th>
-												<th>Comments</th>
+												<th>Process</th>
+												<th>Owner</th>
+												<th>Status</th>
+												<th>Remarks</th>
 											</tr>
 										</thead>										
 										<tbody>

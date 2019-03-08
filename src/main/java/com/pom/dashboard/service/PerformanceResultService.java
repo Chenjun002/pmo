@@ -14,5 +14,7 @@ public interface PerformanceResultService {
 	   public List<PresultVo> getPerformanceList(PerformanceManageEvaBean pmb);
 	   
 	   public int save(PresultVo pv);
+	   
+	   public int update(PresultVo pv);
 
 }

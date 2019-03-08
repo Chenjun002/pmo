@@ -32,6 +32,7 @@ import com.pmo.dashboard.entity.EmployeeKeyevent;
 import com.pmo.dashboard.entity.EmployeeKpo;
 import com.pmo.dashboard.entity.Employeeperforgoal;
 import com.pmo.dashboard.entity.PerformanceEmpProcessBean;
+import com.pmo.dashboard.entity.PerformanceManageEvaBean;
 import com.pmo.dashboard.entity.Performancematrix;
 import com.pmo.dashboard.entity.User;
 import com.pmo.dashboard.entity.vo.EmployeePerforGoalVo;
@@ -243,11 +244,18 @@ public class EmployeePerforGoalController {
 			CSDept csdept = cSDeptService.queryCSDeptById(em.getCsSubDept());
 			User u = userService.queryUserById(em.getRmUserId());
 			
+			
+			//查询绩效结果表，获取comments
+			PerformanceManageEvaBean pmb = new PerformanceManageEvaBean();
+			pmb.setEhr(em.geteHr());
+			pmb.setYear(sf3.format(new Date()));
+			pmb.setQuarter(String.valueOf(DateUtils.getQuarterByMonth(Integer.parseInt(sf2.format(new Date())))));
+			
 			PresultVo pv = new PresultVo();
-			pv.setResultId(Utils.getUUID());//主键
-			pv.seteHr(user.getUserName());
+			
 			pv.setYear(sf3.format(new Date()));//当年
 			pv.setQuarter(DateUtils.getQuarterByMonth(Integer.parseInt(sf2.format(new Date())))+"");//当季度
+			pv.seteHr(user.getUserName());
 			pv.setBu(csdept!=null?csdept.getCsBuName():"");//事业部名称
 			pv.setDu(csdept!=null?csdept.getCsSubDeptName():"");//交付部名称
 			pv.setRm(u.getNickname());//RM名称
@@ -259,7 +267,13 @@ public class EmployeePerforGoalController {
 			pv.setDirectSupervisor(u.getNickname());//直接主管
 			pv.setFinalize(SysConstant.ISNOTFINAL);//是否是最终结果
 			pv.setState(SysConstant.PRESULT_PENDING_RM);//待RM审批
-			performanceResultService.save(pv);
+			
+			PresultVo presultVo = performanceResultService.getPerformance(pmb);
+			
+			if(presultVo == null) {
+				  pv.setResultId(Utils.getUUID());//主键
+				   performanceResultService.save(pv);
+		   }
 			
 			map.put("msg", "保存成功");
 		    map.put("code", "1");

@@ -84,7 +84,7 @@ var path='<%=path%>';
 		<div class="box-inner" > 
 		<div class="box-header well" data-original-title="" >
 			<h2>
-				<i class="glyphicon glyphicon-user"></i>  HRBP-绩效考评-审批
+				<i class="glyphicon glyphicon-user"></i>  HRBP-Performance Assessment-Approval
 			</h2>
 		</div>
 
@@ -102,7 +102,7 @@ var path='<%=path%>';
 					<td> B <br/> &nbsp;</td>
 					<td> C <br/>(5-10%)</td>
 					<td> D <br/>(0-5%) </td>
-					<td> 参评比例合计 </td>
+					<td> Total </td>
 				</tr>
 				<tr>			
 					<td>  <div id="empA"></div>	 </td>

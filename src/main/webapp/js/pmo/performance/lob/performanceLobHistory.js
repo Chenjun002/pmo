@@ -81,17 +81,24 @@ function loadManageResultHistoryQueryList() {
 		    },
 		    {
 			  field : 'name',
-			  title : 'Employee Name'
+			  title : 'Name',
+			  width:80
 		    }, 
 		    {
 			  field : 'bu',
 			  title : 'BU',
-			  width:150
+			  width:215,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		    }, 
 		    {
 			  field : 'du',
 			  title : 'DU',
-			  width:150
+			  width:175,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		    }, 
 		   {
 			  field : 'beginDate',
@@ -132,11 +139,16 @@ function loadManageResultHistoryQueryList() {
 		    }, 
 		    {
 			  field : 'result',
-			  title : 'Assessment Result'
+			  title : 'Result',
+			  width:80
 		    }, 
 		    {
 			  field : 'resultComments',
-			  title : 'Remark'
+			  title : 'Remark',
+			  width:165,
+			  formatter: function(value, row, index){
+				  return '<span style="font-size:9px">'+value+'</span>';
+			  }
 		} ],
 		onLoadSuccess : function(sta) {
 //			console.log("in onLoadSuccess");

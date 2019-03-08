@@ -84,7 +84,7 @@ var path='<%=path%>';
 		<div class="box-inner" > 
 		<div class="box-header well" data-original-title="" >
 			<h2>
-				<i class="glyphicon glyphicon-user"></i>  LOB-审批-审批详情
+				<i class="glyphicon glyphicon-user"></i>  LOB-Approval-Details
 			</h2>
 		</div>
 
@@ -93,7 +93,7 @@ var path='<%=path%>';
             <div class="panel-body">
 			<table id="table1" border="1" width="100%" borderColor="green" >
 				<tr style="">
-					<td colspan="7" style="text-align:center"><font color="green"> ${bu}-绩效比例统计(参考比例要求控制)</font>	 </td>
+					<td colspan="7" style="text-align:center"><font color="green"> ${bu}-Proportions</font>	 </td>
 					<input type="text" class="hidden" id="detail_bu" value="${bu}">
 				</tr>
 				<tr>
@@ -102,7 +102,7 @@ var path='<%=path%>';
 					<td> B <br/> &nbsp;</td>
 					<td> C <br/>(5-10%)</td>
 					<td> D <br/>(0-5%) </td>
-					<td> 参评比例合计 </td>
+					<td> Total </td>
 				</tr>
 				<tr>			
 					<td>  <div id="empA"></div>	 </td>

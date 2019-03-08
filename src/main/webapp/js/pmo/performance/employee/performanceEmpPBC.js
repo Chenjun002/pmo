@@ -49,7 +49,7 @@ function loadPriorityWork(result){
 			tr1.appendTo(tbody);
 		}
 	if(result.data[i].type == "0"){
-		var td1 = $("<td id='tx1'>重点工作</td>");
+		var td1 = $("<td id='tx1'>KBO</td>");
 		
 		var td2 = $("<td name='index'>"
 				+ result.data[i].index
@@ -85,7 +85,7 @@ function loadPriorityWork(result){
 //	td.appendTo(tr2);
 	var td1 = $("<td colspan='8'></td>");
 	td1.appendTo(tr2);
-	var href =$("<button id='button1' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr1(\'table1\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
+	var href =$("<button id='button1' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr1(\'table1\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Add"+"</button>"); 
 	href.appendTo(td1);
 	
 	$("#table1").append("</tbdoy>");
@@ -102,7 +102,7 @@ function loadKeyEvents(result){
 			tr1.appendTo(tbody);
 		}
 	if(result.data[i].type == "1"){
-		var td1 = $("<td style='width:153px;' id='tx1'>关键事件</td>");
+		var td1 = $("<td style='width:153px;' id='tx1'>Key Event</td>");
 		
 		var td2 = $("<td style='width:97px;' name='index'>"
 				+ result.data[i].index
@@ -138,7 +138,7 @@ function loadKeyEvents(result){
 //	td.appendTo(tr2);
 	var td1 = $("<td colspan='7'></td>");
 	td1.appendTo(tr2);
-	var href =$("<button id='button2' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr3(\'table2\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
+	var href =$("<button id='button2' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr3(\'table2\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Add"+"</button>"); 
 	href.appendTo(td1);
 	
 	$("#table2").append("</tbdoy>");
@@ -163,7 +163,7 @@ function loadEmployeePlan(result){
 		var td3 = $("<td name='supportor'>"
 				+ result.plan[i].supportor
 				+ "</td>");
-		var td4 = $("<td name='dealine'>"
+		var td4 = $("<td name='dealine' placeholder='日期格式yyyy-MM-dd'>"
 				+ result.plan[i].dealineString
 				+ "</td>");
 		
@@ -177,7 +177,7 @@ function loadEmployeePlan(result){
 	tr2.appendTo(tbody);
 	var td1 = $("<td colspan='4'></td>");
 	td1.appendTo(tr2);
-	var href =$("<button id='button3' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr2(\'table3\', -1, 4);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
+	var href =$("<button id='button3' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr2(\'table3\', -1, 4);\")>"+"<span class='glyphicon glyphicon-plus'></span> Add"+"</button>"); 
 	href.appendTo(td1);
 	$("#table3").append("</tbdoy>");	
 }
@@ -228,6 +228,13 @@ function save(){
 	    data3.action = $(" td[name='action']").eq(k).text();
 	    data3.supportor = $(" td[name='supportor']").eq(k).text();
 	    data3.dealine = $("td[name='dealine']").eq(k).text();
+	    //验证dealine 格式
+	    var reg = /^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+	    if(!reg.test(data3.dealine)){
+	    	alert("deadline format should be yyyy-MM-dd!");
+	    	return;
+	    }
+	    
 	    plandata.push(data3);
 	}
 	//console.log("数据===="+JSON.stringify(kpodata));

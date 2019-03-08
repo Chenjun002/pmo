@@ -87,7 +87,7 @@ function loadPriorityWork(result){
 //	td.appendTo(tr2);
 	var td1 = $("<td colspan='8'></td>");
 	td1.appendTo(tr2);
-	var href =$("<button id='button1' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr1(\'table1\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
+	var href =$("<button id='button1' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr1(\'table1\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span>Add"+"</button>"); 
 	href.appendTo(td1);
 	
 	$("#table1").append("</tbdoy>");
@@ -140,7 +140,7 @@ function loadKeyEvents(result){
 //	td.appendTo(tr2);
 	var td1 = $("<td colspan='7'></td>");
 	td1.appendTo(tr2);
-	var href =$("<button id='button2' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr3(\'table2\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
+	var href =$("<button id='button2' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr3(\'table2\', -1, 7);\")>"+"<span class='glyphicon glyphicon-plus'></span>Add"+"</button>"); 
 	href.appendTo(td1);
 	
 	$("#table2").append("</tbdoy>");
@@ -179,7 +179,7 @@ function loadEmployeePlan(result){
 	tr2.appendTo(tbody);
 	var td1 = $("<td colspan='4'></td>");
 	td1.appendTo(tr2);
-	var href =$("<button id='button3' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr2(\'table3\', -1, 4);\")>"+"<span class='glyphicon glyphicon-plus'></span> Plus"+"</button>"); 
+	var href =$("<button id='button3' href=\"javascript:void(0);\" class=\"btn btn-info btn-sm\" onclick=\"addTr2(\'table3\', -1, 4);\")>"+"<span class='glyphicon glyphicon-plus'></span>Add"+"</button>"); 
 	href.appendTo(td1);
 	$("#table3").append("</tbdoy>");	
 }

@@ -87,7 +87,7 @@ var path='<%=path%>';
 						<div class="box-inner" >
 							<div class="box-header well" data-original-title="" >
 								<h2>
-									<i class="glyphicon glyphicon-user"></i>  Management-绩效考评-审批-${du}
+									<i class="glyphicon glyphicon-user"></i>  Management-Performance Assessment-Approval-${du}
 									<input type="text" value="${du}" id="curDu" class="hidden"></input>
 								</h2>
 							</div>
@@ -100,7 +100,7 @@ var path='<%=path%>';
 
 									<table id="table1" border="1" width="100%" borderColor="green" >
 										<tr style="">
-										 <td colspan="7" style="text-align:center"><font color="green"> ${du}(参考比例要求控制)</font>	 </td>
+										 <td colspan="7" style="text-align:center"><font color="green"> ${du}(Proportion)</font>	 </td>
 										</tr>
 									   <tr>
 										 <td> A <br/>(10-15%)</td>
@@ -108,7 +108,7 @@ var path='<%=path%>';
 										 <td> B <br/> &nbsp;</td>
 										 <td> C <br/>(5-10%)</td>
 										 <td> D <br/>(0-5%) </td>
-										 <td> 参评比例合计 </td>
+										 <td> Total </td>
 									   </tr>
 									   <tr>			
 										 <td>  <div id="empA"></div>	 </td>

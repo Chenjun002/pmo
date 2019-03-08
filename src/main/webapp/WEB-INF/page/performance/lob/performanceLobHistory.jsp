@@ -76,7 +76,7 @@ var path='<%=path%>';
 			<div class="box-inner">
 				<div class="box-header well" data-original-title="">
 					<h2>
-						<i class="glyphicon glyphicon-user"></i>  LOB-绩效结果-历史绩效
+						<i class="glyphicon glyphicon-user"></i>  LOB-Assessment Result-Performance History Search
 					</h2>
 				</div>
 				<div id="employeeInfo" class="box-content">

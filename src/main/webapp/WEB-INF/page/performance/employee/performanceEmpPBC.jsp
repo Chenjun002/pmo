@@ -64,7 +64,7 @@ var path='<%=path%>';
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-user"></i>Employee-绩效目标-绩效目标设定
+									<i class="glyphicon glyphicon-user"></i>Employee-Performance Goal
 								</h2>
 							</div>
 							<div id="employeeInfo" class="box-content">
@@ -75,7 +75,7 @@ var path='<%=path%>';
 											<div class="row">
 							             	<div class="form-group col-md-2">
 							                    <div class="input-group">
-							                        <span class="input-group-addon">姓名</span>
+							                        <span class="input-group-addon">Name</span>
 							                        <input readonly="readonly" class="form-control" type="text"
 							                        name="userName" id="userName" value="${ sessionScope.loginUser.nickname}">
 							                    </div>
@@ -83,7 +83,7 @@ var path='<%=path%>';
 
 							                <div class="form-group col-md-2">
 							                    <div class="input-group">
-							                        <span class="input-group-addon">工号</span>
+							                        <span class="input-group-addon">EHR ID</span>
 							                        <input style="width:110px;" readonly="readonly" class="form-control" type="text" 
 							                        name="lob" id="lob" value="${ sessionScope.loginUser.userName}">
 
@@ -91,21 +91,21 @@ var path='<%=path%>';
 							                </div>
 							                <div style="margin-left:13px;" class="form-group col-md-2">
 							                    <div class="input-group">
-							                        <span class="input-group-addon">所在部门</span>
+							                        <span class="input-group-addon">Department</span>
 							                        <input style="width:150px;" readonly="readonly" class="form-control" type="text" 
 							                        name="du" id="du" value="">
 							                    </div>
 							                </div>
 							                <div style="margin-left:83px;" class="form-group col-md-2">
 							                    <div class="input-group">
-							                        <span class="input-group-addon">职位</span>
+							                        <span class="input-group-addon">Position</span>
 							                        <input style="width:100px;" readonly="readonly" class="form-control" type="text"
 							                        name="position" id="position">
 							                    </div>
 							                </div>
 											<div class="form-group col-md-2">
 							                    <div class="input-group">
-							                        <span class="input-group-addon">考核主管</span>
+							                        <span class="input-group-addon">Assessment Supervisor</span>
 							                        <input readonly="readonly" class="form-control" type="text" 
 							                        name="assessmentSupervisor" id="assessmentSupervisor">
 							                    </div>
@@ -120,13 +120,13 @@ var path='<%=path%>';
                              <table id="table1" border="1" width="100%" class="templateTable">
 							   <thead>
                                <tr style="background-color:#d9edf7">
-                                 <td>分类</td>
-                                 <td>序号</td>
-                                 <td>重点工作内容</td>
-                                 <td>权重</td>
-                                 <td>阶段目标</td>
-                                 <td>关键措施</td>
-                                 <td>测评部门考核</td>
+                                 <td>Types</td>
+                                 <td>No.</td>
+                                 <td>KBO Description</td>
+                                 <td>Weightage</td>
+                                 <td>Phase Goal</td>
+                                 <td>Key Actions</td>
+                                 <td>Assessment Dept</td>
                                </tr>
 							   </thead>
 							   <tbody>
@@ -134,7 +134,7 @@ var path='<%=path%>';
                                </tbody>
                                   
                                <tr>
-                                 <td colspan="8"><button id="button1" href='javascript:void(0);' class='btn btn-info btn-sm' onclick="addTr1('table1', -1, 7);")><span class="glyphicon glyphicon-plus"></span> Plus</button>
+                                 <td colspan="8"><button id="button1" href='javascript:void(0);' class='btn btn-info btn-sm' onclick="addTr1('table1', -1, 7);")><span class="glyphicon glyphicon-plus"></span> Add</button>
 								 </td>
                                </tr>
                              </table>
@@ -143,34 +143,34 @@ var path='<%=path%>';
                              <tbody>
                              </tbody>
                                <tr>
-                                 <td colspan="8"><button id="button2" href='javascript:void(0);' class='btn btn-info btn-sm' onclick="addTr3('table2', -1, 7);")><span class="glyphicon glyphicon-plus"></span> Plus</button>
+                                 <td colspan="8"><button id="button2" href='javascript:void(0);' class='btn btn-info btn-sm' onclick="addTr3('table2', -1, 7);")><span class="glyphicon glyphicon-plus"></span> Add</button>
 								 </td>
                                </tr>
 							 </table>
 							 <br/>
 
-							 <div>个人能力提升计划IDP (IDP不作为考核项目，是个人成长所做出的承诺)</div>
+							 <div>Individual Development Plan(Used for goal setting instead assessment)</div>
                              <table id="table3" border="1" width="100%" class="templateTable">
 							   <thead>
                                <tr  style="background-color:#d9edf7">
                                  <td >
-								 待提高或发展能力/经验 <br> (识别关键项)
+								 Key Capability to be Improved <br> (Recognize key items)
 								 </td>
                                  <td>
-								 实施活动及衡量标准 <br> (活动要具体、个性化，可衡量)								 
+								 Actions and Measuement<br> (Specific、Personalized、Measurable)								 
 								 </td>
                                  <td>
-								 所需支持人 <br> (导师、主管等相关人)
+								 Support <br> (Supervisor)
 								 </td>
                                  <td> 
-								 计划完成时间 <br> (计划要可执行)
+								 Plan Deadline<br> (Executable)
 								 </td>
                                </tr>
 							   </thead>
 							   <tbody>
 							   </tbody>
 							    <tr>
-                                 <td colspan="4"><button id="button3" href='javascript:void(0);' class='btn btn-info btn-sm' onclick="addTr2('table3', -1, 4);")><span class="glyphicon glyphicon-plus"></span> Plus</button>
+                                 <td colspan="4"><button id="button3" href='javascript:void(0);' class='btn btn-info btn-sm' onclick="addTr2('table3', -1, 4);")><span class="glyphicon glyphicon-plus"></span> Add</button>
 								 </td>
                                </tr>
 							 </table>

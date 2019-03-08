@@ -108,7 +108,7 @@ var path='<%=path%>';
 				<div class="box-inner">
 					<div class="box-header well" data-original-title="">
 						<h2>
-							<i class="glyphicon glyphicon-briefcase"></i> HRBP-绩效考评-集体评议
+							<i class="glyphicon glyphicon-briefcase"></i> HRBP-Performance Assessment-Group Assessment
 						</h2>
 					</div>
 
@@ -118,10 +118,16 @@ var path='<%=path%>';
 							<div class="panel-body">
 								<table id="table1" border="1" width="100%" borderColor="green">
 									<tr style="">
-										<td rowspan="4" width="55%">说明：<br /> 1.<font color="red">比例控制：A 10-15%; B+ 30-40%; B 30-40%; C 5-10%; D 0-5%; A未使用比例可用于B+, 但A&B+ &lt; 55%; </font><br />
-											2.考评周期内在岗时间不足一个月的长假员工，不参与考评，请各部门在备注中注明原因，HRBP部会从OA系统取数据 进行统一复核;<br /> 3.标蓝色行的异动和借阅人员，考评部门需参考有监督权交付部的建议，HRBP做复核，以确保这部分人员的绩效考核被合理对待。<br />
+										<td rowspan="4" width="55%">Instruction<br/>
+											1.<font color="red">Proportion: A 10-15%: B+ 30-40%; C 5-10%;D 0-5%; adding unused of A to B, unsure"A"+"B+"<=55%; </font><br/>
+											2.The assessment does not apply to employees who have been on duty for less than one month per quarter, the
+
+reason for their absence should be noticed HRBP should confirm on that though OA system.<br/>
+											3.The assessment of transfer&on-loan employees shall refer to the recommendation of the releated
+
+epartments.<br/>
 										</td>
-										<td colspan="7" style="text-align:center"><font color="green"> 主管比例统计(参考比例要求控制)</font></td>
+										<td colspan="7" style="text-align:center"><font color="green"> Proportion (Refer Proportion rules)</font></td>
 									</tr>
 									<tr>
 										<td>A <br />(10-15%)
@@ -134,7 +140,7 @@ var path='<%=path%>';
 										</td>
 										<td>D <br />(0-5%)
 										</td>
-										<td>参评比例合计</td>
+										<td>Total</td>
 									</tr>
 									<tr>
 										<td>

@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,9 +33,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.pmo.dashboard.entity.CSDept;
 import com.pmo.dashboard.entity.PerformanceManageEvaBean;
 import com.pmo.dashboard.entity.PerformanceManageResultHistoryBean;
 import com.pmo.dashboard.entity.PerformanceQueryCondition;
+import com.pmo.dashboard.entity.User;
+import com.pom.dashboard.service.CSDeptService;
 import com.pom.dashboard.service.PerformanceManageEvaService;
 
 /**
@@ -56,21 +60,40 @@ public class PerformanceManageEvaResultController {
     @Resource
     private PerformanceManageEvaService manageEvaService;
     
+    @Resource
+	private CSDeptService cSDeptService;
+    
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @RequestMapping("/queryManageResultHistoryQueryList")
     @ResponseBody
     public Object queryManageResultHistoryQueryList(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, PerformanceQueryCondition condition,
             HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+    	User user = (User) request.getSession().getAttribute("loginUser");
+        List<String>  csSubDeptNames = new ArrayList<String>();   
+        
+        List<CSDept> cSDepts = null;
+        
+        if(user.getCsdeptId() != null && user.getCsdeptId() != ""){
+        	cSDepts= cSDeptService.queryCSDeptByIds(user.getCsdeptId().split(","));
+        	for (CSDept csDept : cSDepts) {
+                csSubDeptNames.add(csDept.getCsSubDeptName());
+            }
+        }
+    	
+    	
         logger.debug("query condition:" + condition);
         // update by xuexuan 客户端分页改为服务器端分页
         PageHelper.startPage(pageNumber, pageSize);
-        condition.setDu(null);//查询自己事业部下所有员工的
+        //condition.setDu(null);//查询自己事业部下所有员工的
         List<PerformanceManageEvaBean> data = manageEvaService.finalizeResultList(condition);
         PageInfo<PerformanceManageEvaBean> page = new PageInfo<>(data);
         Map<String, Object> map = new HashMap<>();
         map.put("total", page.getTotal());
         map.put("rows", data);
+        
+        map.put("user", user);
+        map.put("csSubDeptNames", csSubDeptNames);
         return map;
     }
 

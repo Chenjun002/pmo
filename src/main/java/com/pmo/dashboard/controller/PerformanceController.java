@@ -154,6 +154,10 @@ public class PerformanceController {
      */
     @RequestMapping("/performanceEmpEvaHistoryQuery")
     public String getPerformanceEmpEvaHistoryQuery(final HttpServletRequest request, Model model) {
+    	 User user = (User) request.getSession().getAttribute("loginUser");
+    	 CSDept csDept = csDeptService.queryCSDeptById(user.getCsdeptId());
+         model.addAttribute("DU", csDept.getCsSubDeptName());
+         
         return "performance/employee/performanceEmpEvaHistoryQuery";
     }
 
@@ -275,6 +279,7 @@ public class PerformanceController {
         model.addAttribute("BU", user.getBu());
         CSDept csDept = csDeptService.queryCSDeptById(user.getCsdeptId());
         model.addAttribute("DU", csDept.getCsSubDeptName());
+        model.addAttribute("userType", user.getUserType());
         return "performance/management/performanceManageResultHistoryQuery";
     }
 

@@ -134,7 +134,7 @@ function addTr(tableId, row, trHtml) {
 function addTr1(tableId, row, cols) {
 	var tr0 = $("<tr id='tr1'></tr>");
 	
-	var td0 = $("<td >"	+ "重点工作"	+ "</td>");
+	var td0 = $("<td >"	+ "KBO"	+ "</td>");
 	var td1 = $("<td name='index'>"	+ "</td>");
 	var td2 = $("<td name='description'>"+ "</td>");
 	var td3 = $("<td name='weightrate'>"+ "</td>");
@@ -154,6 +154,7 @@ function addTr1(tableId, row, cols) {
 	var currentRowspan = $("#leftrowspan").attr("rowspan");
 	newRowspan =(parseInt(currentRowspan)+1);
 	$("#leftrowspan").attr("rowspan", newRowspan);
+	this.edit();
 }
 function addTr2(tableId, row, cols) {
 	var tr0 = $("<tr id='tr1' height=39px></tr>");
@@ -167,11 +168,12 @@ function addTr2(tableId, row, cols) {
 	td3.appendTo(tr0);
 	
 	addTr(tableId, row, tr0);
+	this.edit();
 }
 function addTr3(tableId, row, cols) {
 	var tr0 = $("<tr id='tr1'></tr>");
 	
-	var td0 = $("<td style='width:153px;'>"	+ "关键事件"	+ "</td>");
+	var td0 = $("<td style='width:153px;'>"	+ "Key Event"	+ "</td>");
 	var td1 = $("<td style='width:97px;' name='index'>"	+ "</td>");
 	var td2 = $("<td style='width:208px;' name='description'>"+ "</td>");
 	var td3 = $("<td style='width:97px;' name='weightrate'>"+ "</td>");
@@ -191,6 +193,7 @@ function addTr3(tableId, row, cols) {
 	var currentRowspan = $("#leftrowspan").attr("rowspan");
 	newRowspan =(parseInt(currentRowspan)+1);
 	$("#leftrowspan").attr("rowspan", newRowspan);
+	this.edit();
 }
 function edit(){
 	$("tbody #tr1 td").attr("contenteditable","true");

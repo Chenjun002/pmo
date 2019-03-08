@@ -76,7 +76,7 @@ var path='<%=path%>';
 			<div class="box-inner">
 				<div class="box-header well" data-original-title="">
 					<h2>
-						<i class="glyphicon glyphicon-user"></i>  HRBP-绩效结果-历史绩效
+						<i class="glyphicon glyphicon-user"></i>  HRBP-Assessment Result-Performance History Search
 					</h2>
 				</div>
 				<div id="employeeInfo" class="box-content">
@@ -102,7 +102,11 @@ var path='<%=path%>';
 						<div class="group">
 							<label class="col-sm-2 control-label">BU</label>
 							<div class="col-sm-4">
-								<input readonly="readonly" type="text" class="form-control" id="bu" name="bu" value="${BU }" />
+<%-- 								<input readonly="readonly" type="text" class="form-control" id="bu" name="bu" value="${BU }" /> --%>
+									<select class="form-control" name="csBu" data-bv-notempty
+												data-bv-notempty-message="请选择角色" id="csBu" data-bv-group=".group">
+												<option value="">-- Option--</option>
+									</select>
 							</div>
 						</div>
 						<div class="group">

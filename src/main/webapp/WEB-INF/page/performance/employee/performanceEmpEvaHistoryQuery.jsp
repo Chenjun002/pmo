@@ -64,7 +64,7 @@ var path='<%=path%>';
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-user"></i>  Employee-绩效结果-历史绩效  
+									<i class="glyphicon glyphicon-user"></i>  Employee-Performance History Search  
 								</h2>
 							</div>
 							<div id="employeeInfo" class="box-content">
@@ -89,8 +89,8 @@ var path='<%=path%>';
 												<input readonly="readonly" type="text" class="form-control" id="staffName" value="${ sessionScope.loginUser.nickname}"/>
 											</div>
 										</div>
-										</br></br></br>
-										<div class="group">
+										
+										<div class="group" style="display:none">
 											<label class="col-sm-2 control-label">MSA Role</label>
 											<div class="col-sm-4">
 											 <select class="form-control" name="role"
@@ -99,7 +99,7 @@ var path='<%=path%>';
 											 </select>
 											</div>
 										</div>
-										<div class="group">
+										<div class="group" style="display:none">
 											<label class="col-sm-2 control-label">Skills/Technology</label>
 											<div class="col-sm-4">
 											  <select class="form-control" name="skill"
@@ -112,19 +112,13 @@ var path='<%=path%>';
 										<div class="group">
 											<label class="col-sm-2 control-label">BU</label>
 											<div class="col-sm-4">
-											  <select class="form-control" name="csBu" data-bv-notempty
-												data-bv-notempty-message="请选择角色" id="csBu" data-bv-group=".group">
-												<option value="">-- Option--</option>
-											  </select>
+												<input readonly="readonly" type="text" class="form-control" id="staffName" value="${ sessionScope.loginUser.bu}"/>
 											</div>
 										</div>
 										<div class="group">
 											<label class="col-sm-2 control-label">DU</label>
 											<div class="col-sm-4">
-											  <select class="form-control" name="csSubDept" data-bv-notempty
-												data-bv-notempty-message="请选择角色" id="csSubDept" data-bv-group=".group">
-												<option value="">-- Option--</option>
-											  </select>
+												<input readonly="readonly" type="text" class="form-control" id="staffName" value="${ DU}"/>
 											</div>
 										</div>
 										</br></br></br>

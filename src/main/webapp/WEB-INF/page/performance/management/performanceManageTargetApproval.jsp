@@ -114,7 +114,7 @@ div .stateTips{
 						<div class="box-inner" >
 							<div class="box-header well" data-original-title="" >
 								<h2>
-									<i class="glyphicon glyphicon-user"></i>  Management-绩效目标-审批   
+									<i class="glyphicon glyphicon-user"></i>  Management-Performance Goal-Approval  
 								</h2>
 							</div>
 
@@ -123,7 +123,7 @@ div .stateTips{
 							<!-- result box start -->
 									<table id="table3" border="1" width="100%" >
 										<tr style="background-color:#00688B">
-										 <td ><font color="white"> 绩效目标审批</font>	 </td>
+										 <td ><font color="white"> Performance Goal-Approval </font>	 </td>
 										</tr>
 									   <tr>
 										 <td> <table id="manageTargetApprovalList" class="table table-thead-background"></table> </td>									
@@ -180,13 +180,13 @@ div .stateTips{
 		<span style="color:#006633;font-size: 16px;">State</span>
 		<div style="border-bottom:1px solid #0e5b87;margin: 10px 0px 20px 0px;"></div>
 		<div class="checkbox-custom checkbox-default" style="margin-bottom: 10px;padding-left: 15px;">
-			<input type="checkbox" id="yes" name="stateCheckbox" value="-0" checked> <label for="yes">未审批</label>
+			<input type="checkbox" id="yes" name="stateCheckbox" value="-0" checked> <label for="yes">未Approval</label>
 		</div>
 		<div class="checkbox-custom checkbox-default" style="margin-bottom: 10px;padding-left: 15px;">
-			<input type="checkbox" id="no" name="stateCheckbox" value="2" checked> <label for="no">审批通过</label>
+			<input type="checkbox" id="no" name="stateCheckbox" value="2" checked> <label for="no">Approval通过</label>
 		</div>
 		<div class="checkbox-custom checkbox-default" style="margin-bottom: 10px;padding-left: 15px;">
-			<input type="checkbox" id="no" name="stateCheckbox" value="3" checked> <label for="no">审批未通过</label>
+			<input type="checkbox" id="no" name="stateCheckbox" value="3" checked> <label for="no">Approval未通过</label>
 		</div>
 		<button type="button" class="btn btn-default" onClick="search(3)" style="margin-right:5px;">&nbsp;&nbsp;OK&nbsp;&nbsp;</button>
 		<button type="button" class="btn btn-default" onClick="cancelFilter(3)">Cancel</button>
